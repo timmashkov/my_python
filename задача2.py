@@ -1,21 +1,31 @@
-def inputNumbers(x):
-    xyz = ["X", "Y", "Z"]
-    a = []
+def inputKoord(x):
+    a = [0] * x
     for i in range(x):
-        a.append(input(f"Введите значение {xyz[i]}: "))
+        is_OK = False
+        while not is_OK:
+            try:
+                number = float(input(f"Введите {i + 1} координату: "))
+                a[i] = number
+                is_OK = True
+                if a[i] == 0:
+                    is_OK = False
+                    print("Координата не должно быть равна 0 ")
+            except ValueError:
+                print("Ты ошибся. Вводить надо числа!")
     return a
 
 
-def checkPredicate(x):
-    left = not (x[0] or x[1] or x[2])
-    right = not x[0] and not x[1] and not x[2]
-    result = left == right
-    return result
+def checkCoordinates(xy):
+    text = 4
+    if xy[0] > 0 and xy[1] > 0:
+        text = 1
+    elif xy[0] < 0 and xy[1] > 0:
+        text = 2
+    elif xy[0] < 0 and xy[1] < 0:
+        text = 3
+    print(f"Точка находится в {text} четверти плоскости")
 
 
-statement = inputNumbers(3)
+koordinate = inputKoord(2)
+checkCoordinates(koordinate)
 
-if checkPredicate(statement) == True:
-    print(f"Утверждение истинно")
-else:
-    print(f"Утверждение ложно")
