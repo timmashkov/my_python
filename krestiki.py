@@ -1,3 +1,6 @@
+#Против бота
+
+
 from random import randint
 
 
