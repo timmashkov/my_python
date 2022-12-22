@@ -4,15 +4,15 @@ from print_data import print_data
 from search_data import search_data
 
 def greeting():
-    print("Добро пожаловать в телефонный справочник!")
+    print("Добро пожаловать в наш вуз!")
 
 def input_data():
     last_name = input("Введите фамилию: ")
     first_name = input("Введите имя: ")
     middle_name = input("Введите отчество: ")
     brith_name = input("Введите дату рождения: ")
-    phone_number = input("Введите номер контакта: ")
-    note = input("Введите категорию контакта: ")
+    phone_number = input("Введите номер группы: ")
+    note = input("Введите поток: ")
     return [last_name, first_name, middle_name, brith_name, phone_number, note]
 
 def choice_sep():
@@ -22,10 +22,10 @@ def choice_sep():
     return sep
 
 def choice_todo():
-    print("Доступные операции с телефонной книгой:\n\
+    print("Доступные операции со списком:\n\
     1 - импорт;\n\
     2 - экспорт;\n\
-    3 - поиск контакта.")
+    3 - поиск группы.")
     ch = input("Введите цифру: ")
     if ch == '1':
         sep = choice_sep()
@@ -38,7 +38,7 @@ def choice_todo():
         data = export_data()
         item = search_data(word, data)
         if item != None:
-            print("Фамилия".center(20), "Имя".center(20), "Отчество".center(20), "Дата рождения".center(20), "Телефон".center(15), "Категория".center(30))
+            print("Фамилия".center(20), "Имя".center(20), "Отчество".center(20), "Дата рождения".center(20), "группа".center(15), "Поток".center(30))
             print("-"*130)
             print(item[0].center(20), item[1].center(20), item[2].center(20), item[3].center(20), item[4].center(15), item[5].center(30))
         else:
