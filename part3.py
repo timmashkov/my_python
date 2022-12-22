@@ -1,5 +1,5 @@
 # модуль импорта данных 
-
+# исправил ошибку при вызове функции
 def import_data(data, sep=None):
     with open('phone.csv', 'a+') as file:
         if sep == None:
