@@ -1,3 +1,4 @@
+# здесь правок не было
 from controller import *
 
 greeting()
