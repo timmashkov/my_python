@@ -1,6 +1,6 @@
 
 # модуль экспорта данных 
-
+# исправил мелкие ошибки
 def export_data():
     with open('phone.csv', 'r') as file:
         data = []
